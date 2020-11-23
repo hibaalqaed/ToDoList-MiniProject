@@ -9,6 +9,7 @@ class DataStore {
       data: observable,
       fetchData: action,
       creatData: action,
+      deleteData: action,
     });
   }
 
@@ -27,6 +28,18 @@ class DataStore {
       this.data.push(response.data);
     } catch (error) {
       console.error(console.error);
+    }
+  };
+
+  deleteData = async (dataId) => {
+    try {
+      await axios.delete(`http://localhost:8000/data/${dataId}`);
+      this.data = this.data.filter((data) => data.id !== dataId);
+    } catch (error) {
+      console.error(
+        "🚀 ~ file: dataStore.js ~ line 39 ~ dataStore ~ deleteData ~ error",
+        error
+      );
     }
   };
 }

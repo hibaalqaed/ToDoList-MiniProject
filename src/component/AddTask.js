@@ -1,10 +1,11 @@
+//React
 import React from "react";
-
 import { useState } from "react";
 
-//from styles
-// import { AddBarStyled, Addtext, AddButtonStyled } from "../styles";
+//Styles
+//import { AddBarStyled, Addtext, AddButtonStyled } from "../styles";
 
+//Store
 import dataStore from "../store/dataStore";
 
 const AddTask = () => {
@@ -20,7 +21,7 @@ const AddTask = () => {
     <>
       <>
         <input
-          placeholder="Add new task"
+          placeholder="Add a new task"
           value={data.name}
           type="text"
           name="name"

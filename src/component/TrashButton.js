@@ -1,16 +1,17 @@
+//React
 import React from "react";
 
-//store
+//Store
 import dataStore from "../store/dataStore";
 
-//styles
+//Styles
 import { DltButtonStyled } from "../styles";
 
 const TrashButton = ({ data }) => {
   return (
     <div>
       <DltButtonStyled onClick={() => dataStore.deleteData(data.id)}>
-        trash
+        Trash
       </DltButtonStyled>
     </div>
   );

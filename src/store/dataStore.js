@@ -1,4 +1,7 @@
+//Mobx
 import { makeObservable, observable, action } from "mobx";
+
+//Axios
 import axios from "axios";
 
 class DataStore {
@@ -8,7 +11,7 @@ class DataStore {
     makeObservable(this, {
       data: observable,
       fetchData: action,
-      creatData: action,
+      createData: action,
       deleteData: action,
     });
   }
@@ -22,7 +25,7 @@ class DataStore {
     }
   };
 
-  creatData = async (newData) => {
+  createData = async (newData) => {
     try {
       const response = await axios.post("http://localhost:8000/Data", newData);
       this.data.push(response.data);
@@ -41,6 +44,11 @@ class DataStore {
         error
       );
     }
+  };
+
+  moveData = (dataId) => {
+    const data = this.data.find((data) => data.id === dataId);
+    data.finished = !data.finished;
   };
 }
 

@@ -1,6 +1,7 @@
-//components
-import DataList from "./component/DataList";
+//Components
 import AddTask from "./component/AddTask";
+import DataList from "./component/DataList";
+import FinishedList from "./component/FinishedList";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <p>This is your To Do List</p>
       <AddTask />
       <DataList />
+      <FinishedList />
     </div>
   );
 }

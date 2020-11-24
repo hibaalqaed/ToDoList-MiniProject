@@ -1,14 +1,16 @@
-//store
+//Store
 import dataStore from "../store/dataStore";
+
+//Component
 import TrashButton from "./TrashButton";
 
-const ItemData = ({ data, dataId }) => {
+const ItemData = ({ data }) => {
   return (
     <div>
       <h1>
         <input
           type="checkbox"
-          onClick={() => dataStore.deleteData(data.id)}
+          onClick={() => dataStore.moveData(data.id)}
         ></input>
         {data.name} <TrashButton data={data} />
       </h1>

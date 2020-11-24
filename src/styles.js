@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 export const TextBarStyled = styled.input`
   padding: 0.5rem;

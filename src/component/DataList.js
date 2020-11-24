@@ -1,14 +1,23 @@
+//Mobx
 import { observer } from "mobx-react";
 
-// store
+//Store
 import dataStore from "../store/dataStore";
 
-//component
+//Component
 import ItemData from "./ItemData";
-//
+
 const DataList = () => {
-  const dataList = dataStore.data.map((_data) => <ItemData data={_data} />);
-  return <>{dataList}</>;
+  const filteredData = dataStore.data.filter((data) => !data.finished);
+  const dataList = filteredData.map((_data) => (
+    <ItemData key={_data.id} data={_data} />
+  ));
+  return (
+    <>
+      <p>To Do List:</p>
+      <div>{dataList}</div>
+    </>
+  );
 };
 
 export default observer(DataList);

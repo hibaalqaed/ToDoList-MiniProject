@@ -1,4 +1,4 @@
-import { Component, useState } from "react";
+import { useState } from "react";
 
 //Store
 import dataStore from "../store/dataStore";
@@ -7,6 +7,7 @@ import dataStore from "../store/dataStore";
 import TrashButton from "./buttons/TrashButton";
 
 const ItemData = ({ data }) => {
+  //I think we need to move this to dataStore under updatePriority but didn't know how to do it.
   const [currentPriority, setCurrentPriority] = useState("low");
   const changePriority = () => {
     if (currentPriority === "low") {
@@ -23,7 +24,7 @@ const ItemData = ({ data }) => {
       <h1>
         <input
           type="checkbox"
-          onClick={() => dataStore.moveData(data.id)}
+          onClick={() => dataStore.updateStatus(data)}
         ></input>
         {data.name}
         <TrashButton data={data} />

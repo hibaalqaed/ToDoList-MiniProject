@@ -23,6 +23,7 @@ class DataStore {
     } catch (error) {
       console.error("DataStore -> fetchData -> error", error);
     }
+    console.log(this.data);
   };
 
   createData = async (newData) => {
@@ -46,9 +47,34 @@ class DataStore {
     }
   };
 
-  moveData = (dataId) => {
-    const data = this.data.find((data) => data.id === dataId);
-    data.finished = !data.finished;
+  //we're using this method to update the status of the task so if it is checked it moves to the finishedlist
+  updateStatus = async (dataObject) => {
+    try {
+      dataObject.status = !dataObject.status; //this just flips the status
+      await axios.put(
+        `http://localhost:8000/data/${dataObject.id}`,
+        dataObject
+      );
+    } catch (error) {
+      console.log(
+        "🚀 ~ file: dataStore.js ~ line 55 ~ DataStore ~ updateDataStatus= ~ error",
+        error
+      );
+    }
+  };
+
+  updatePriority = async (dataObject) => {
+    try {
+      await axios.put(
+        `http://localhost:8000/data/${dataObject.id}`,
+        dataObject
+      );
+    } catch (error) {
+      console.log(
+        "🚀 ~ file: dataStore.js ~ line 74 ~ DataStore ~ updatePriority= ~ error",
+        error
+      );
+    }
   };
 }
 

@@ -8,7 +8,7 @@ import dataStore from "../store/dataStore";
 import ItemData from "./ItemData";
 
 const DataList = () => {
-  const filteredData = dataStore.data.filter((data) => !data.finished);
+  const filteredData = dataStore.data.filter((data) => !data.status);
   const dataList = filteredData.map((_data) => (
     <ItemData key={_data.id} data={_data} />
   ));

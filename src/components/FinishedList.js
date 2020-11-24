@@ -8,7 +8,7 @@ import ItemData from "./ItemData";
 import { observer } from "mobx-react";
 
 const FinishedList = () => {
-  const filteredData = dataStore.data.filter((data) => data.finished);
+  const filteredData = dataStore.data.filter((data) => data.status);
   const finished = filteredData.map((_data) => (
     <ItemData key={_data.id} data={_data} />
   ));

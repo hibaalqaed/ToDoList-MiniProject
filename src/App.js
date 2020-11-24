@@ -1,7 +1,7 @@
 //Components
-import AddTask from "./component/AddTask";
-import DataList from "./component/DataList";
-import FinishedList from "./component/FinishedList";
+import AddTask from "./components/AddTask";
+import DataList from "./components/DataList";
+import FinishedList from "./components/FinishedList";
 
 function App() {
   return (

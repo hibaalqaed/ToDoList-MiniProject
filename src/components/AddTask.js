@@ -19,17 +19,15 @@ const AddTask = () => {
 
   return (
     <>
-      <>
-        <input
-          placeholder="Add a new task"
-          value={data.name}
-          type="text"
-          name="name"
-          onChange={handleChange}
-        />
+      <input
+        placeholder="Add a new task"
+        value={data.name}
+        type="text"
+        name="name"
+        onChange={handleChange}
+      />
 
-        <button onClick={() => dataStore.creatData(data)}>Add</button>
-      </>
+      <button onClick={() => dataStore.createData(data)}>Add</button>
     </>
   );
 };

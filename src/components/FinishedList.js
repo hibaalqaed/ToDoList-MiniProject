@@ -14,7 +14,7 @@ const FinishedList = () => {
   ));
   return (
     <>
-      <p>Finished List:</p>
+      <p>FINISHED LIST:</p>
       <div>{finished}</div>
     </>
   );

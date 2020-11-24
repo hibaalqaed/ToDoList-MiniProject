@@ -2,10 +2,10 @@
 import React from "react";
 
 //Store
-import dataStore from "../store/dataStore";
+import dataStore from "../../store/dataStore";
 
 //Styles
-import { DltButtonStyled } from "../styles";
+import { DltButtonStyled } from "../../styles";
 
 const TrashButton = ({ data }) => {
   return (

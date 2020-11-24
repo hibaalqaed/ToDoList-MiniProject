@@ -2,7 +2,7 @@
 import dataStore from "../store/dataStore";
 
 //Component
-import TrashButton from "./TrashButton";
+import TrashButton from "./buttons/TrashButton";
 
 const ItemData = ({ data }) => {
   return (
@@ -12,7 +12,8 @@ const ItemData = ({ data }) => {
           type="checkbox"
           onClick={() => dataStore.moveData(data.id)}
         ></input>
-        {data.name} <TrashButton data={data} />
+        {data.name}
+        <TrashButton data={data} />
       </h1>
     </div>
   );

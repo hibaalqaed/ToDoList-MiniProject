@@ -6,6 +6,7 @@ export const TextBarStyled = styled.input`
   display: block;
   width: 40%;
 `;
+
 export const DltButtonStyled = styled.button`
   background-color: #e53f2e;
   padding: 0.75em;

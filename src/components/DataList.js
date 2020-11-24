@@ -14,7 +14,7 @@ const DataList = () => {
   ));
   return (
     <>
-      <p>To Do List:</p>
+      <p>TO DO LIST:</p>
       <div>{dataList}</div>
     </>
   );

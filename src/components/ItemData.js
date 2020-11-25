@@ -1,4 +1,6 @@
 import { useState } from "react";
+//styles
+import { ItemWrapper, TexTask } from "../styles";
 
 //Store
 import dataStore from "../store/dataStore";
@@ -20,17 +22,16 @@ const ItemData = ({ data }) => {
   };
 
   return (
-    <div>
-      <h1>
+    <ItemWrapper>
+      <TexTask>
         <input
           type="checkbox"
           onClick={() => dataStore.updateStatus(data)}
         ></input>
-        {data.name}
+        {data.name} <button onClick={changePriority}>{currentPriority}</button>
         <TrashButton data={data} />
-        <button onClick={changePriority}>{currentPriority}</button>
-      </h1>
-    </div>
+      </TexTask>
+    </ItemWrapper>
   );
 };
 

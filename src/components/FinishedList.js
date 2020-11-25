@@ -7,6 +7,8 @@ import ItemData from "./ItemData";
 //Mobx
 import { observer } from "mobx-react";
 
+//styles
+import { ListTextHeader } from "../styles";
 const FinishedList = () => {
   const filteredData = dataStore.data.filter((data) => data.status);
   const finished = filteredData.map((_data) => (
@@ -14,7 +16,7 @@ const FinishedList = () => {
   ));
   return (
     <>
-      <p>FINISHED LIST:</p>
+      <ListTextHeader>FINISHED LIST:</ListTextHeader>
       <div>{finished}</div>
     </>
   );

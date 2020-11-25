@@ -3,10 +3,13 @@ import AddTask from "./components/AddTask";
 import DataList from "./components/DataList";
 import FinishedList from "./components/FinishedList";
 
+//styles
+import { TextHeader } from "./styles";
+
 function App() {
   return (
     <div>
-      <p>This is your To Do List</p>
+      <TextHeader> My Daily Planner </TextHeader>
       <AddTask />
       <DataList />
       <FinishedList />

@@ -3,7 +3,8 @@ import React from "react";
 import { useState } from "react";
 
 //Styles
-//import { AddBarStyled, Addtext, AddButtonStyled } from "../styles";
+//styles
+import { TextBoxStyle, AddButtonStyled } from "../styles";
 
 //Store
 import dataStore from "../store/dataStore";
@@ -19,7 +20,7 @@ const AddTask = () => {
 
   return (
     <>
-      <input
+      <TextBoxStyle
         placeholder="Add a new task"
         value={data.name}
         type="text"
@@ -27,7 +28,9 @@ const AddTask = () => {
         onChange={handleChange}
       />
 
-      <button onClick={() => dataStore.createData(data)}>Add</button>
+      <AddButtonStyled onClick={() => dataStore.createData(data)}>
+        Add task
+      </AddButtonStyled>
     </>
   );
 };
